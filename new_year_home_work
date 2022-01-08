@@ -1,0 +1,120 @@
+1 . you have to write a fun which will take string and return a len of 
+it without using a inbuilt fun len
+###
+def len_str(str1):
+    """this will return the lenth of string"""
+    if type(str1) == str:
+        len = 0
+        for i in str1:
+            len+=1
+        return len
+    else:
+        return "you have not passed a string as an argument"
+    
+print(len_str('aarya krishna'))    
+print(len_str(123)) 
+
+
+2 . write a fun which will be able to print an index of all premitive element which you will pass 
+
+###
+def index_ele(a):
+    " it will print the index of all the iterrable object passed to it"
+        for i in enumerate(a):
+            print(i)
+
+3 . Write a fun which will take input as a dict and give me out as a list of all the values 
+even in case of 2 level nesting it should work . 
+
+###
+l = {'a':123, 'b':'str', 'c':2+3j, 'd':{'e':5, 'f':'dfg', 'g':234}}
+def dict_value(d):
+    """ this function will return a list of values of a dictionary even if it is in two level nesting"""
+    if type(d) == dict:
+        l1 = []
+        for i in d.keys():
+            if type(d[i]) != dict:
+                l1.append(d[i])
+            else:
+                l1.extend(d[i].values())
+
+        return l1
+print(dict_value(l))
+
+4 . write a fun which will take another function as an input and return me an output 
+
+###
+def squ_int(a):
+    """ this function will return the square of an integer"""
+    return a**2
+l = [1,2,3,4,5,6,7,8]
+
+def list_squ(b):
+    """this function will take a list as an input and return a list of square of each element of list"""
+    l1 = []
+    if type(b) == list:
+        for i in b:
+            l1.append(squ_int(i))
+        return l1
+print(list_squ(l))
+
+5. write a function whihc will take multiple list as a input and give me concatnation of all the element as 
+and output 
+
+###
+def conct_list(a, b, c):
+    
+    """this will return a list with concatenated elements of all the list"""
+    a.extend(b)
+    a.extend(c)
+    return a
+print(conct_list([1,2,3,4], [5,6,7], [11,12,13,14,15]))
+
+6 . write a function which will be able to take a list as an input return an index of each element 
+like a inbuilt index function but even if we have repetative element it should return index.
+7 . Write a function which will whould return list of all the file name from a directory . 
+
+
+###
+import os
+folder_path = r'C:\Users\rashm\OneDrive\Desktop\python'
+def list_File(dir):
+    """this fuction will return the list of file in the directory"""
+    list_file = []
+    for i in os.listdir(dir):
+        list_file.append(i)
+    return list_file
+print(list_File(folder_path))
+
+8  . write a function which will be able to show your system configuration . 
+
+###
+import platform
+def system_conf():
+    """this fuction will print the system configuration"""
+    print(platform.uname())
+system_conf()
+
+
+
+9 . write a function which will be able to show date and time.
+
+###
+from datetime import datetime
+now = datetime.now()
+def current_date_time(dt):
+    """this function will return the current date and time"""
+    return dt.strftime('%d %m %Y, %H %M %S')
+current_date_time(now)
+ 
+10 . write a function whihc will be able to read a image file and show it to you .
+
+###
+import cv2
+import matplotlib.pyplot as plt
+img_path = r'C:\Users\rashm\OneDrive\Desktop\RASHMI.png'
+def print_image(path):
+    """this function will print the image and take the argument as file path"""
+    my_img = plt.imread(path)
+    plt.imshow(my_img)
+print_image(img_path)
