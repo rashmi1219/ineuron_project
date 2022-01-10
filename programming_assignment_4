@@ -1,0 +1,79 @@
+#write a python program to find the factorial of a number
+def fact(n):
+    fact = 1
+    for i in range(1, n+1):
+        fact = fact*i
+    return fact
+print(fact(5))
+
+
+#Write a python program to display the multiplication table.
+def multi_table(n):
+    for i in range(1, 11):
+        print(n, 'X', i, '=', n * i)
+multi_table(21)
+
+#write a python program to print the fibonacci sequence
+def fibon_seq(n):
+    a = 0
+    b = 1
+    for i in range(n):
+        yield a
+        a, b = b, a+b
+for i in fibon_seq(10):
+    print(i)
+    
+#write a python program to check Armstrong number.
+def armstrong_num(n):
+    s = str(n)
+    l = len(s)
+    arm_num = 0
+    for i in s:
+        n1 = int(i)
+        arm_num += n1**l
+    if arm_num == n:
+        print('this is an armstrong number')
+    else:
+        print('this is not an armstrong number')
+
+# write a program to find armstrong number in an interval
+def armstrong_num_int(n1, n2):
+    for i in range(n1, n2+1):
+        s = str(i)
+        l = len(s)
+        arm_num = 0
+        for j in s:
+            n = int(j)
+            arm_num += n**l
+        if arm_num == i:
+            yield i
+        else:
+            continue
+for i in armstrong_num_int(1,1700):
+    print(i)
+    
+    
+#write a python program to find sum of natural number
+def sum_nat_num(n):
+    if n < 0:
+        print('the number is not a natural number')
+    else:
+        sum = 0
+        for i in range(1 , n+1):
+            sum+=i
+        return sum
+sum_nat_num(12)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
